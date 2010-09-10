@@ -23,7 +23,7 @@
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	NSLog(@"loading");
 	[NSThread sleepForTimeInterval:7.0];
-	image = [UIImage imageNamed:@"cup_48.png"];
+	image = [UIImage imageNamed:@"snowy.jpg"];
 	[self performSelectorOnMainThread:@selector(updateImage) withObject:nil waitUntilDone:YES];
 	[pool release];
 }

@@ -12,6 +12,7 @@
 		01A4FBDB123AA8D40051376D /* ViewTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A4FBD9123AA8D40051376D /* ViewTwo.m */; };
 		01A4FBDC123AA8D40051376D /* ViewTwo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01A4FBDA123AA8D40051376D /* ViewTwo.xib */; };
 		01A4FBE1123AAB090051376D /* cup_48.png in Resources */ = {isa = PBXBuildFile; fileRef = 01A4FBE0123AAB090051376D /* cup_48.png */; };
+		01A4FD0A123ABDE60051376D /* snowy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 01A4FD09123ABDE60051376D /* snowy.jpg */; };
 		1D3623260D0F684500981E51 /* CrashageAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* CrashageAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -28,6 +29,7 @@
 		01A4FBD9123AA8D40051376D /* ViewTwo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewTwo.m; sourceTree = "<group>"; };
 		01A4FBDA123AA8D40051376D /* ViewTwo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewTwo.xib; sourceTree = "<group>"; };
 		01A4FBE0123AAB090051376D /* cup_48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cup_48.png; sourceTree = "<group>"; };
+		01A4FD09123ABDE60051376D /* snowy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = snowy.jpg; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* CrashageAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrashageAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* CrashageAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrashageAppDelegate.m; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				01A4FD09123ABDE60051376D /* snowy.jpg */,
 				01A4FBE0123AAB090051376D /* cup_48.png */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Crashage-Info.plist */,
@@ -164,6 +167,7 @@
 				01A4FBD3123AA8530051376D /* ViewOne.xib in Resources */,
 				01A4FBDC123AA8D40051376D /* ViewTwo.xib in Resources */,
 				01A4FBE1123AAB090051376D /* cup_48.png in Resources */,
+				01A4FD0A123ABDE60051376D /* snowy.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
