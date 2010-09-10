@@ -12,25 +12,34 @@
 @implementation ViewOne
 
 -(void) viewDidLoad {
-	[self makeMeCrash];
-}
-
--(void) makeMeCrash {
-	[self performSelectorInBackground:@selector(loadImage) withObject:nil];
+	@try {
+		[self performSelectorInBackground:@selector(loadImage) withObject:nil];
+	}
+	@catch (NSException * e) {
+		NSLog(@"Caught %@: %@", [e name], [e reason]);
+	}
 }
 
 - (void) loadImage {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	NSLog(@"loading");
-	[NSThread sleepForTimeInterval:7.0];
-	image = [UIImage imageNamed:@"snowy.jpg"];
-	[self performSelectorOnMainThread:@selector(updateImage) withObject:nil waitUntilDone:YES];
+	
+	NSData *imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:@"http://www.wv838.com/Memorabilia/snowy.jpg"]];
+	UIImage *photo = [UIImage imageWithData:imageData];
+	[imageData release];
+	@try {
+		[self performSelectorOnMainThread:@selector(updateImage:) withObject:photo waitUntilDone:YES];	
+	}
+	@catch (NSException * e) {
+		NSLog(@"loadImage Caught %@: %@", [e name], [e reason]);
+		return;
+	}
 	[pool release];
 }
 
-- (void) updateImage {
+- (void) updateImage:(UIImage *) img {
 	NSLog(@"updating");
-	[imageView setImage:image];
+	[imageView setImage:img];
 }
 
 - (void) leave:(id)sender {

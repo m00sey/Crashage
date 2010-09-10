@@ -15,5 +15,5 @@
 	UIImage *image;
 }
 - (void) leave:(id) sender;
-- (void) makeMeCrash;
+- (void) updateImage:(UIImage *) img;
 @end
