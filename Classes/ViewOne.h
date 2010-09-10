@@ -15,5 +15,5 @@
 	UIImage *image;
 }
 - (void) leave:(id) sender;
-- (void) updateImage:(UIImage *) img;
+//- (void) updateImage:(UIImage *) img;
 @end

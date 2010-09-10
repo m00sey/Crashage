@@ -11,15 +11,38 @@
 
 @implementation ViewTwo
 
-/*
- // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
-        // Custom initialization
-    }
-    return self;
+-(void) viewDidLoad {
+	[[self navigationController] setTitle:@"Hello Issue"];
+	@try {
+		[self performSelectorInBackground:@selector(loadImage) withObject:nil];
+	}
+	@catch (NSException * e) {
+		NSLog(@"Caught %@: %@", [e name], [e reason]);
+	}
 }
-*/
+
+- (void) loadImage {
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	NSLog(@"loading");
+	
+	NSData *imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:@"http://www.wv838.com/Memorabilia/snowy.jpg"]];
+	UIImage *photo = [UIImage imageWithData:imageData];
+	[imageData release];
+	@try {
+		[self performSelectorOnMainThread:@selector(updateImage:) withObject:photo waitUntilDone:YES];	
+	}
+	@catch (NSException * e) {
+		NSLog(@"loadImage Caught %@: %@", [e name], [e reason]);
+		return;
+	}
+	[pool release];
+}
+
+- (void) updateImage:(UIImage *) img {
+	NSLog(@"updating");
+	[imageView setImage:img];
+}
+
 
 /*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -51,6 +74,7 @@
 
 
 - (void)dealloc {
+	[imageView dealloc];
     [super dealloc];
 }
 

@@ -10,7 +10,7 @@
 
 
 @interface ViewTwo : UIViewController {
-
+	IBOutlet UIImageView *imageView;
 }
 
 @end

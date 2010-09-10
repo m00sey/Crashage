@@ -12,41 +12,13 @@
 @implementation ViewOne
 
 -(void) viewDidLoad {
-	@try {
-		[self performSelectorInBackground:@selector(loadImage) withObject:nil];
-	}
-	@catch (NSException * e) {
-		NSLog(@"Caught %@: %@", [e name], [e reason]);
-	}
-}
-
-- (void) loadImage {
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-	NSLog(@"loading");
-	
-	NSData *imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:@"http://www.wv838.com/Memorabilia/snowy.jpg"]];
-	UIImage *photo = [UIImage imageWithData:imageData];
-	[imageData release];
-	@try {
-		//[self performSelectorOnMainThread:@selector(updateImage:) withObject:photo waitUntilDone:YES];	
-		[self updateImage:photo];
-	}
-	@catch (NSException * e) {
-		NSLog(@"loadImage Caught %@: %@", [e name], [e reason]);
-		return;
-	}
-	[pool release];
-}
-
-- (void) updateImage:(UIImage *) img {
-	NSLog(@"updating");
-	[imageView setImage:img];
 }
 
 - (void) leave:(id)sender {
 	NSLog(@"leave");
 	ViewTwo *viewTwo = [[ViewTwo alloc] init];
 	[[self navigationController] pushViewController:viewTwo animated:YES];
+	[viewTwo release];
 }
 
 - (void)didReceiveMemoryWarning {
