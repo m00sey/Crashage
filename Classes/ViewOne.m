@@ -22,13 +22,13 @@
 - (void) loadImage {
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	NSLog(@"loading");
-	[NSThread sleepForTimeInterval:15.0];
+	[NSThread sleepForTimeInterval:7.0];
 	image = [UIImage imageNamed:@"cup_48.png"];
-	[self performSelectorOnMainThread:@selector(updateImage:) withObject:nil waitUntilDone:YES];
+	[self performSelectorOnMainThread:@selector(updateImage) withObject:nil waitUntilDone:YES];
 	[pool release];
 }
 
-- (void) updateImage:(UIImage *) img {
+- (void) updateImage {
 	NSLog(@"updating");
 	[imageView setImage:image];
 }
