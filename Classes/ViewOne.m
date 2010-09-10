@@ -28,7 +28,8 @@
 	UIImage *photo = [UIImage imageWithData:imageData];
 	[imageData release];
 	@try {
-		[self performSelectorOnMainThread:@selector(updateImage:) withObject:photo waitUntilDone:YES];	
+		//[self performSelectorOnMainThread:@selector(updateImage:) withObject:photo waitUntilDone:YES];	
+		[self updateImage:photo];
 	}
 	@catch (NSException * e) {
 		NSLog(@"loadImage Caught %@: %@", [e name], [e reason]);
