@@ -1,0 +1,5 @@
+build/
+Crashage.xcodeproj/*.pbxuser
+Crashage.xcodeproj/*.perspectivev3
+Crashage.xcodeproj/project.xcworkspace/xcuserdata/kevingriffin.xcuserdatad/WorkspaceState.xcuserstate
+Crashage.xcodeproj/xcuserdata/*
